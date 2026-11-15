@@ -1,4 +1,3 @@
-Attempting to perform the InitializeDefaultDrives operation on the 'FileSystem' provider failed.
 # Davi — Estudo Cinematográfico
 
 Experiência web 3D construída a partir dos modelos fornecidos em `teste 01.zip`.

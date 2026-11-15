@@ -1,0 +1,40 @@
+Attempting to perform the InitializeDefaultDrives operation on the 'FileSystem' provider failed.
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+:root { color-scheme: dark; --ink:#d9e6e6; --muted:rgba(217,230,230,.55); --cyan:#80f4ec; --line:rgba(173,255,249,.22); }
+* { box-sizing:border-box; }
+html, body { margin:0; width:100%; min-height:100%; background:#05090d; }
+body { overflow:hidden; color:var(--ink); font-family:Manrope,Arial,sans-serif; }
+button, a { font:inherit; color:inherit; }
+button { cursor:pointer; }
+.experience { min-height:100svh; overflow:hidden; isolation:isolate; position:relative; background:radial-gradient(circle at 52% 42%,#123b42 0%,#07141a 28%,#05090d 70%); }
+#scene { position:absolute; inset:0; z-index:-2; touch-action:none; }
+#scene canvas { display:block; width:100%; height:100%; outline:none; }
+.grain { position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.075; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E"); mix-blend-mode:screen; }
+.topbar, .footer { position:absolute; display:flex; align-items:center; left:clamp(24px,4vw,64px); right:clamp(24px,4vw,64px); justify-content:space-between; letter-spacing:.09em; text-transform:uppercase; }
+.topbar { top:clamp(22px,4vw,48px); }
+.brand { display:flex; align-items:center; gap:10px; color:#e7ffff; text-decoration:none; font:500 13px "DM Mono",monospace; letter-spacing:.22em; }
+.brand__mark { display:grid; width:23px; height:23px; border:1px solid var(--cyan); place-items:center; font-size:12px; letter-spacing:0; transform:rotate(45deg); }
+.brand__mark::first-letter { transform:rotate(-45deg); }
+.brand span span { color:var(--cyan); }
+.topbar__meta, .footer { color:var(--muted); font:400 10px "DM Mono",monospace; }
+.hero { position:absolute; top:50%; left:clamp(24px,10vw,160px); transform:translateY(-50%); max-width:390px; pointer-events:none; animation:rise .85s .45s both cubic-bezier(.16,1,.3,1); }
+.eyebrow { margin:0 0 19px; color:var(--cyan); font:500 10px "DM Mono",monospace; letter-spacing:.18em; }
+h1 { margin:0; color:#f1fbfb; font:500 clamp(44px,5.7vw,88px)/.94 "Playfair Display",serif; letter-spacing:-.06em; }
+h1 em { color:#9cf4ed; font-weight:500; }
+.hero__copy { max-width:280px; margin:26px 0 24px; color:rgba(227,240,240,.72); font-size:13px; line-height:1.7; }
+.text-button { pointer-events:auto; border:0; padding:0; background:transparent; color:var(--ink); font:500 11px "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; transition:color .2s; }
+.text-button:hover { color:var(--cyan); }.text-button__icon { margin-right:7px; font-size:15px; vertical-align:-1px; }
+.controls { position:absolute; right:clamp(24px,4vw,64px); top:50%; display:flex; flex-direction:column; gap:14px; transform:translateY(-50%); }
+.control-group { display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--line); background:rgba(5,13,17,.35); backdrop-filter:blur(10px); }
+.choice, .icon-button { border:0; background:transparent; color:var(--muted); transition:background .2s,color .2s; }
+.choice { padding:11px 14px; text-align:left; font:500 9px "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+.choice + .choice { border-top:1px solid var(--line); }.choice:hover, .choice.is-active { background:rgba(127,244,236,.12); color:var(--cyan); }
+.control-group--tools { flex-direction:row; }.icon-button { width:39px; height:39px; font-size:17px; }.icon-button + .icon-button { border-left:1px solid var(--line); }.icon-button:hover, .icon-button.is-active { color:var(--cyan); background:rgba(127,244,236,.12); }
+.footer { bottom:clamp(22px,4vw,48px); }.footer p { margin:0; }.footer__separator { padding:0 6px; color:var(--cyan); }.footer__index { color:var(--cyan); }.footer__index span { color:var(--muted); }
+.loader { position:absolute; inset:0; z-index:3; display:grid; place-content:center; gap:11px; min-width:180px; background:#05090d; color:var(--muted); text-align:center; transition:opacity .8s ease, visibility .8s ease; }.loader.is-complete { opacity:0; visibility:hidden; }.loader__eyebrow,.loader-value { font:500 9px "DM Mono",monospace; letter-spacing:.16em; text-transform:uppercase; }.loader__track { width:min(40vw,220px); height:1px; overflow:hidden; background:#153035; }.loader__track span { display:block; width:0%; height:100%; background:var(--cyan); transition:width .2s ease; }.loader-value { color:var(--cyan); }
+.message { position:absolute; left:50%; top:50%; max-width:300px; transform:translate(-50%,-50%); padding:14px 18px; border:1px solid rgba(255,185,132,.45); background:rgba(20,11,9,.82); color:#ffd5ba; font-size:12px; line-height:1.5; text-align:center; }
+@keyframes rise { from { opacity:0; transform:translateY(calc(-50% + 18px)); } to { opacity:1; transform:translateY(-50%); } }
+@media (max-width:700px) { .topbar__meta { display:none; }.hero { top:auto; bottom:104px; left:24px; right:24px; max-width:300px; transform:none; }.hero h1 { font-size:50px; }.hero__copy { margin:17px 0 16px; }.controls { top:auto; bottom:105px; right:24px; transform:none; }.footer { font-size:8px; }.footer p:first-child { max-width:180px; line-height:1.6; }.footer__separator { display:none; } }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; scroll-behavior:auto!important; } }
+

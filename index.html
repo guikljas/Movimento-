@@ -1,0 +1,71 @@
+Attempting to perform the InitializeDefaultDrives operation on the 'FileSystem' provider failed.
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#05090d" />
+    <meta name="description" content="Uma escultura 3D interativa inspirada no estudo de Davi." />
+    <title>Davi — Estudo Cinematográfico</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="experience" aria-label="Experiência 3D Davi">
+      <div id="scene" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
+
+      <div id="loader" class="loader" role="status" aria-live="polite">
+        <span class="loader__eyebrow">Carregando a escultura</span>
+        <div class="loader__track"><span id="loader-bar"></span></div>
+        <span id="loader-value">0%</span>
+      </div>
+
+      <header class="topbar">
+        <a class="brand" href="#inicio" aria-label="Davi, início">
+          <span class="brand__mark">D</span>
+          <span>DAV<span>I</span></span>
+        </a>
+        <p class="topbar__meta">Estudo 3D / 2026</p>
+      </header>
+
+      <section id="inicio" class="hero">
+        <p class="eyebrow">ESTUDO DE FORMA · LUZ · MATÉRIA</p>
+        <h1>O clássico,<br /><em>em movimento.</em></h1>
+        <p class="hero__copy">Uma interpretação tridimensional de Davi, moldada por luz e contornos.</p>
+        <button id="replay" class="text-button" type="button">
+          <span class="text-button__icon">↻</span> Reproduzir revelação
+        </button>
+      </section>
+
+      <aside class="controls" aria-label="Controles da escultura">
+        <div class="control-group" role="group" aria-label="Selecionar modelo">
+          <button class="choice is-active" type="button" data-model="head" aria-pressed="true">Busto</button>
+          <button class="choice" type="button" data-model="body" aria-pressed="false">Corpo inteiro</button>
+        </div>
+        <div class="control-group control-group--tools" role="group" aria-label="Visualização">
+          <button id="wire-toggle" class="icon-button" type="button" aria-pressed="true" aria-label="Alternar contornos">⌗</button>
+          <button id="rotate-toggle" class="icon-button is-active" type="button" aria-pressed="true" aria-label="Alternar rotação automática">↻</button>
+        </div>
+      </aside>
+
+      <footer class="footer">
+        <p>Arraste para explorar <span class="footer__separator">·</span> role para aproximar</p>
+        <p class="footer__index">01 <span>/</span> 02</p>
+      </footer>
+
+      <div id="message" class="message" role="alert" hidden></div>
+    </main>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
+
